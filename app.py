@@ -1,7 +1,13 @@
 import streamlit as st
 
-from transformers import pipeline
-classifier = pipeline("text-classification",model='bhadresh-savani/distilbert-base-uncased-emotion', return_all_scores=True)
+import requests
+
+API_URL = "https://api-inference.huggingface.co/models/bhadresh-savani/distilbert-base-uncased-emotion"
+headers = {"Authorization": "Bearer api_OKvBwwcmNPTBaVNmvzmfSrWAmvpJZshtJE"}
+
+def query(payload):
+	response = requests.post(API_URL, headers=headers, json=payload)
+	return response.json()
 
 
 st.title('Hello World!')
@@ -11,6 +17,6 @@ text = form.text_input(label='Enter some text')
 submit_button = form.form_submit_button(label='Submit')
 
 if submit_button:
-    prediction = classifier(text, )
+    output = query({"inputs": text})
     st.subheader('Data')
-    st.write({"text": prediction})
+    st.write({"text": output})
