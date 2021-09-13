@@ -19,4 +19,4 @@ submit_button = form.form_submit_button(label='Submit')
 if submit_button:
     output = query({"inputs": text})
     st.subheader('Data')
-    st.write({"text": output})
+    st.json({"text": output})
