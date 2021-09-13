@@ -10,7 +10,7 @@ def query(payload):
 	return response.json()
 
 
-st.title('Hello World!')
+st.title('Text emotion detector !')
 
 form = st.form(key='my_form')
 text = form.text_input(label='Enter some text')
