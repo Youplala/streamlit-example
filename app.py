@@ -25,4 +25,5 @@ if submit_button:
 
     df = pd.DataFrame(li)
     df.columns = ["Emotion", "Score"]
+    df = df.sort_values(ascending=False, by="Score")
     st.table(df.assign(hack='').set_index('hack'))
