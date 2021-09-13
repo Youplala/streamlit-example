@@ -1,11 +1,14 @@
 import streamlit as st
 import pandas as pd
+import os
 import requests
+from dotenv import load_dotenv
 
 # Load HuggingFace API
+load_dotenv()
 
 API_URL = "https://api-inference.huggingface.co/models/bhadresh-savani/distilbert-base-uncased-emotion"
-headers = {"Authorization": "Bearer api_OKvBwwcmNPTBaVNmvzmfSrWAmvpJZshtJE"}
+headers = {"Authorization": "Bearer " + os.getenv('API_KEY')}
 
 def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
