@@ -9,5 +9,9 @@ Use >= python3.7, after cloning this repository, run this command.
 ## Launch app
 
 `streamlit run app.py`# streamlit-example
-# streamlit-example
-# streamlit-example
+
+# Demo link
+
+<https://cloudcomputing-first-course.herokuapp.com/>
+
+Elie Brosset & Julien Assuied
